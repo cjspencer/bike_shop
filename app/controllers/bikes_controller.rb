@@ -10,8 +10,13 @@ class BikesController < ApplicationController
     redirect_to @bike
   end
 
+  def show
+    @bike = Bike.find(params[:id])
+  end
+
 private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:bike).permit(:title, :text)
 
+end
 end
