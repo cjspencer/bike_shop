@@ -1,18 +1,4 @@
 <h1>Welcome to The Right Bike</h1>
 <p>Here is our demo fleet<p>
 
-  <h1>Bikes</h1>
-
-  <table>
-    <tr>
-      <th>Bike</th>
-      <th>Status</th>
-    </tr>
-    <% @bikes.each do |bike| %>
-    <tr>
-      <td><%= bikes.bike %></td>
-      <td><%= bike.status %></td>
-    </tr> -->
-<% end %>
-
-  </table>
+<%= link_to "Our Demo Fleet", controller: 'bikes'%>
