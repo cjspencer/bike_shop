@@ -8,6 +8,8 @@
   <tr>
     <td><%= bike.title %></td>
     <td><%= bike.text %></td>
+    <td><%= link_to 'Show', bike_path(bike) %></td>
+    <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
   </tr>
 <% end %>
 
