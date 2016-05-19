@@ -11,6 +11,10 @@ class BikesController < ApplicationController
     @bike = Bike.new
   end
 
+  def edit
+    @bike = Bike.find(params[:id])
+  end
+
   def create
     # render plain: params[:bike].inspect
     @bike = Bike.new(bike_params)
@@ -19,6 +23,23 @@ class BikesController < ApplicationController
     else
       render 'new'
   end
+end
+
+def update
+  @bike = Bike.find(params[:id])
+
+  if @bike.update(bike_params)
+    redirect_to @bike
+  else
+    render 'edit'
+  end
+end
+
+def destroy
+  @bike = Bike.find(params[:id])
+  @bike.destroy
+
+  redirect_to bikes_path
 end
 
 private
