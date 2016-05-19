@@ -14,10 +14,12 @@ class BikesController < ApplicationController
   def create
     # render plain: params[:bike].inspect
     @bike = Bike.new(bike_params)
-    @bike.save
-    redirect_to @bike
+    if @bike.save
+      redirect_to @bike
+    else
+      render 'new'
   end
-
+end
 
 private
   def bike_params
