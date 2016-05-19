@@ -10,6 +10,9 @@
     <td><%= bike.text %></td>
     <td><%= link_to 'Show', bike_path(bike) %></td>
     <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+    <td><%= link_to 'Seek & Destroy', bike_path(bike),
+            method: :delete,
+            data: {confirm: 'Are you sure?'}%></td>
   </tr>
 <% end %>
 
